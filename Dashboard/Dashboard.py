@@ -5,7 +5,9 @@ import streamlit as st
 from babel.numbers import format_currency
 sns.set(style='dark')
 
-file_path = "dashboard/all_data.csv"
+BASE_DIR = Path(__file__).resolve().parent.parent
+file_path = BASE_DIR / "data" / "bike_df.csv"
+
 bike_df = pd.read_csv(file_path)
 
 st.title("🚲 Bike Sharing Dataset — Capital Bikeshare, Washington D.C.")
